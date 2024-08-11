@@ -11,7 +11,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Complex authorization logic
     }
 
     /**
@@ -22,7 +22,9 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'author' => 'required|max:255',
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
         ];
     }
 }
