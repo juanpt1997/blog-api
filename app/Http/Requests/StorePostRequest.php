@@ -22,9 +22,9 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'author' => 'required|max:255',
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
+            'author' => 'required|string|max:255',
+            'title' => 'required|string|unique:posts|max:255',
+            'body' => 'required|string',
         ];
     }
 }
