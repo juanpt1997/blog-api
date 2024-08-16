@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function Index() {
 
@@ -19,12 +20,19 @@ export function Index() {
 
         fetchPosts();
     }, []);
-    // 
+    //
 
     return (
         <div>
+            <div className="flex">
+                <Link
+                    to='/posts/create'
+                    className="px-4 py-2 mt-4 text-white bg-purple-500 rounded-md hover:bg-purple-600">
+                        Create new post
+                </Link>
+            </div>
             {posts &&
-                posts.map((post) => (
+                posts.slice().reverse().map((post) => (
                     <div
                         key={post.id}
                         className="p-5 my-5 border rounded-md shadow-sm text-left"
@@ -35,5 +43,5 @@ export function Index() {
                     </div>
                 ))}
         </div>
-    );
+    );//
 }
