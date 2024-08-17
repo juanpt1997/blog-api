@@ -40,6 +40,20 @@ export function Index() {
                         <h2 className="mb-5 font-bold">{post.title}</h2>
                         <h2 className="font-bold">{post.author}</h2>
                         <p>{post.body}</p>
+
+                        <div className="space-x-5 space-y-5">
+                            <Link
+                                to={`posts/update/${post.id}`}
+                                state={post}
+                                className="px-4 py-2 text-white bg-purple-500 rounded-md hover:bg-purple-600"
+                                >
+                                    Edit Post
+                            </Link>
+
+                            <button className="px-4 py-2 text-white bg-gray-400 rounded-md hover:bg-gray-500">
+                                    Delete Post
+                                </button>
+                        </div>
                     </div>
                 ))}
         </div>
