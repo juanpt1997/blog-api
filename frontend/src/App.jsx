@@ -6,6 +6,7 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Create from "./Pages/Posts/Create";
 import Update from "./Pages/Posts/Update";
+import Show from "./Pages/Posts/Show";
 // 
 export default function App() {
     return (
@@ -16,6 +17,7 @@ export default function App() {
                 <Route path="/about" element={<About/>}/>
                 <Route path="/posts/create" element={<Create/>}/>
                 <Route path="/posts/update/:id" element={<Update/>}/>
+                <Route path="/posts/:postId" element={<Show/>}/>
             </Routes>
         </div>
     );

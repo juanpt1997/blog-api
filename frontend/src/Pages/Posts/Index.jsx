@@ -56,9 +56,13 @@ export function Index() {
                         key={post.id}
                         className="p-5 my-5 border rounded-md shadow-sm text-left"
                     >
-                        <h2 className="mb-5 font-bold">{post.title}</h2>
+                        <Link 
+                            to={`posts/${post.id}`}
+                            state={post}> 
+                            <h2 className="py-3 mb-5 font-bold hover:underline">{post.title}</h2>
+                        </Link>
                         <h2 className="font-bold">{post.author}</h2>
-                        <p>{post.body}</p>
+                        <p>{post.body}</p> 
 
                         <div className="space-x-5 space-y-5">
                             <Link
@@ -67,7 +71,7 @@ export function Index() {
                                 className="px-4 py-2 text-white bg-purple-500 rounded-md hover:bg-purple-600"
                                 >
                                     Edit Post
-                            </Link>
+                            </Link> 
 
                             <button 
                                 onClick={() => handleDeletePost(post.id)}
